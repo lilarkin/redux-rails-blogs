@@ -4,7 +4,7 @@ import BlogList from './BlogList';
 import './App.css';
 
 const App = () => (
-  <div className='App'>
+  <div className='App container'>
     <BlogForm />
     <BlogList />
   </div>

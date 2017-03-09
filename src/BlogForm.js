@@ -23,6 +23,8 @@ const BlogForm = ({ dispatch, nextId }) => {
          <input ref={ n => titleInput = n } autoFocus />
          <h3>Add Blog Content</h3>
          <textarea ref={ n => bodyInput = n} ></textarea>
+         <br />
+         <input type='submit' className='btn' />
       </form>
     </div>
   )

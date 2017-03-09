@@ -4,8 +4,10 @@ const blogs = ( state = [], action ) => {
       return action.blogs
     case 'ADD_BLOG':
       return [action.blog, ...state];
-    case 'BLOG': 
-      debugger;
+    case 'EDIT_BLOG':
+      return state.find( b => b.id === action.id )
+    case 'DELETE_BLOG':
+      return state.filter( b => b.id !== action.id )
     default:
       return state
   }

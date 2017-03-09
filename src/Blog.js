@@ -2,11 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-const Blog = ({ id, title, body, dispatch }) => (
-  <div>
-    <Link to={`/editblog/${id}`}>{title}</Link> 
-    <p>{body}</p>
-  </div>
-)
+class Blog extends React.Component {
 
-export default connect()(Blog)
+  deleteBlog = () => {
+    this.props.dispatch({ type: 'DELETE_BLOG', id: this.props.id })
+  }
+
+  render() {
+    let blog = this.props
+    return (
+      <div>
+        <Link to={`/editblog/${blog.id}`}>{blog.title}</Link> 
+        <p>{blog.body}</p>
+        <button onClick={ this.deleteBlog } className='btn'>Delete</button>
+      </div>
+    )
+  }
+}
+
+export default connect()(Blog);
